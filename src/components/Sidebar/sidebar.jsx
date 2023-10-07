@@ -1,0 +1,71 @@
+//Core packages
+import { createSignal, createEffect, Show, For } from "solid-js";
+import history from '../../history.jsx'
+import { FaSolidGlobe, FaSolidChartSimple, FaSolidMobileScreen, FaSolidCloud, FaSolidServer, FaSolidCode, FaSolidPeopleGroup, FaSolidBug, FaSolidMessage, FaSolidGear, FaRegularSquarePlus, FaRegularBuilding } from 'solid-icons/fa'
+import createUser from "../../Store/user.jsx"
+
+function Navbar(){
+  const { user } = createUser;
+  console.log(user())
+  return(
+    <>
+      <aside class="flex sidebar">
+          <div class="flex bg-sidebar flex-col items-center w-16 h-screen py-8 space-y-8 bg-white dark:bg-gray-900 dark:border-gray-700 mt-8 pt-32">
+
+              <a href="#" onClick={() => {history.push('/dashboard')}}>
+                <FaSolidChartSimple/>
+              </a>
+
+              <a href="#" onClick={() => {history.push('/webapp')}}>
+                <FaSolidGlobe/>
+              </a>
+
+              <a href="#" onClick={() => {history.push('/mobileapp')}}>
+                <FaSolidMobileScreen/>
+              </a>
+
+              <a href="#" class="">
+                <FaSolidCloud/>
+              </a>
+
+              <a href="#" onClick={() => {history.push('/internalnetwork')}}>
+                <FaSolidServer/>
+              </a>
+
+              <a href="#" class="" onClick={() => {history.push('/sourcecode')}}>
+                <FaSolidCode/>
+              </a>
+
+              <a href="#" class="" onClick={() => {history.push('/socialengineering')}}>
+                <FaSolidPeopleGroup/>
+              </a>
+
+              <a href="#" class="" onClick={() => {history.push('/issues')}}>
+                <FaSolidBug/>
+              </a>
+
+              <a href="#" class="">
+                <FaSolidMessage/>
+              </a>
+
+              <Show when={user() && user().admin}>
+                <a href="#" onClick={() => {history.push('/admin/panel')}} class="">
+                  <FaRegularSquarePlus/>
+                </a>
+
+                <a href="#" onClick={() => {history.push('/admin/company')}} class="">
+                  <FaRegularBuilding/>
+                </a>
+              </Show>
+
+
+              <a href="#" class="">
+                <FaSolidGear/>
+              </a>
+          </div>
+      </aside>
+    </>
+  );
+}
+
+export default Navbar;

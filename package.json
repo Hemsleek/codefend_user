@@ -1,0 +1,50 @@
+{
+  "name": "codefend-panel",
+  "version": "0.0.1",
+  "description": "Security Platform Panel",
+  "type": "commonjs",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@capacitor/assets": "^2.0.4",
+    "@capacitor/cli": "^5.0.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.30",
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.3.8",
+    "vite-plugin-solid": "^2.3.0"
+  },
+  "dependencies": {
+    "@capacitor/android": "^5.0.0",
+    "@capacitor/app": "^5.0.2",
+    "@capacitor/core": "^5.0.0",
+    "@capacitor/ios": "^5.0.0",
+    "@capacitor/local-notifications": "^5.0.2",
+    "@capawesome/capacitor-background-task": "^5.0.0",
+    "@motionone/solid": "^10.14.2",
+    "@solidjs/router": "^0.8.1",
+    "@transistorsoft/capacitor-background-fetch": "^5.0.0",
+    "axios": "^1.4.0",
+    "babel-register": "^6.26.0",
+    "chart.js": "^4.4.0",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.24.0",
+    "history": "^5.3.0",
+    "jwt-decode": "^3.1.2",
+    "moment": "^2.29.4",
+    "solid-app-router": "^0.4.2",
+    "solid-chartjs": "^1.3.8",
+    "solid-icons": "^1.0.4",
+    "solid-js": "^1.7.5",
+    "solid-toast": "^0.5.0",
+    "solid-top-loading-bar": "^0.3.1"
+  },
+  "main": "vite.config.js",
+  "keywords": [],
+  "author": "Codefend"
+}

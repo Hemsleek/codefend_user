@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --bg-black: #fdfdfd;
+    --color-black: #fdfdfd;
+    --sidebar-black: #fafafa;
+    --bg-codefend: #f43434;
+    --color-codefend: #fcfcfc;
+    --color-icon: #afafaf;
+    --color-border: #e5e5e5;
+    --focus-icon: #4a2f34;
+    --color-panel: #b3b3b3;
+    --font-color: #999999;
+    --font-alternative: #999999;
+    --sidebar-width: 64px;
+    --navbar-height: 52px;
+    --main-black: #f7f7f7;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto-Regular'), url('./assets/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Questrial;
+    font-style: normal;
+    font-weight: 400;
+    src: local('Questrial-Regular'), url('./assets/Questrial-Regular.ttf') format('truetype');
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-border);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg-codefend);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--focus-icon);
+}
+
+.bg-codefend {
+    background-color: var(--bg-codefend) !important;
+    color: var(--color-codefend);
+}
+
+.bg-sidebar {
+    background-color: var(--sidebar-black) !important;
+    color: var(--color-codefend);
+}
+
+.sidebar {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    border-right: 1px solid var(--color-border);
+}
+
+.sidebar a {
+    color: var(--color-icon);
+    transition: .2s;
+    padding: 24px;
+    padding-top: 1.75vh;
+    padding-bottom: 1.75vh;
+    margin-top: 0 !important;
+    border-bottom: 1px solid var(--color-border);
+
+}
+.sidebar a:first-child {
+    border-top: 1px solid var(--color-border);
+
+}
+
+.sidebar a:hover {
+    background-color: var(--bg-black);
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    color: var(--color-black) !important;
+}
+
+body {
+    overflow-y: hidden;
+}
+
+main {
+    margin-top: var(--navbar-height);
+    margin-left: var(--sidebar-width);
+    background-color: var(--main-black);
+    color: var(--color-codefend);
+    height: 100vh;
+    display: flex;
+}
+
+.title-format {
+    font-family: Roboto;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--color-codefend);
+    color: var(--font-color);
+}
+
+.text-format p {
+    font-family: Questrial;
+    font-size: 14px;
+}
+
+.internal-tables {
+    border-top: 1px solid var(--color-border);
+    border-right: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+}
+.internal-tables-scroll {
+    max-height: 75%;
+    border-bottom: 1px solid var(--color-border);
+    overflow-y: scroll;
+}
+
+.its-30 {
+    max-height: 23%;
+}
+
+.internal-tables div {
+    font-family: Roboto;
+    font-size: 12px;
+    background-color: var(--main-black);
+    border-bottom: 1px solid var(--color-border);
+    color: var(--font-color);
+}
+
+.disable-border div {
+    border-bottom: 0px solid var(--color-border);
+
+}
+
+.internal-tables-active {
+    background-color: var(--sidebar-black) !important;
+}
+
+.red-border {
+    border-left: 6px solid var(--bg-codefend); 
+}
+
+.sub-domain-icon-v {
+    width: 2px;
+    height: 100%;
+    background-color: var(--bg-codefend);
+    display: inline-block;
+}
+.sub-domain-icon-h {
+    width: 20px;
+    height: 2px;
+    background-color: var(--bg-codefend);
+    align-self: center;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.statics-table div {
+    border-right: 1px solid var(--color-border) !important;
+}
+
+.no-border-bottom {
+    border-bottom: 0px !important;
+}
+
+
+.log-component {
+    background-color: var(--bg-black);
+    color: var(--color-codefend);
+}
+
+.log-inputs {
+    background-color: var(--bg-black);
+    color: var(--font-color) !important;
+    border: 1px solid var(--color-border);
+}
+
+.codefend-text-red {
+    color: var(--bg-codefend) !important;
+}
+
+.text-white {
+    color: var(--main-black) !important;
+}
+
+.text-gray {
+    color: var(--color-icon) !important;
+}
+
+.checkbox-color {
+    accent-color: var(--bg-codefend)
+}
