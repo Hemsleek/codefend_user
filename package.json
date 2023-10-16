@@ -28,6 +28,10 @@
     "@capawesome/capacitor-background-task": "^5.0.0",
     "@motionone/solid": "^10.14.2",
     "@solidjs/router": "^0.8.1",
+    "@tiptap/extension-color": "^2.1.12",
+    "@tiptap/extension-list-item": "^2.1.12",
+    "@tiptap/extension-text-style": "^2.1.12",
+    "@tiptap/starter-kit": "^2.1.12",
     "@transistorsoft/capacitor-background-fetch": "^5.0.0",
     "axios": "^1.4.0",
     "babel-register": "^6.26.0",
@@ -42,7 +46,8 @@
     "solid-icons": "^1.0.4",
     "solid-js": "^1.7.5",
     "solid-toast": "^0.5.0",
-    "solid-top-loading-bar": "^0.3.1"
+    "solid-top-loading-bar": "^0.3.1",
+    "tiptap-solid": "^0.1.8"
   },
   "main": "vite.config.js",
   "keywords": [],

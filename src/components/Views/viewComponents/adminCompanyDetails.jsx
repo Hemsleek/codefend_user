@@ -183,7 +183,7 @@ function InternalNetworksChart() {
         </div>
         <Show when={usersToShow()}>
           {
-            usersToShow().filter((user) => user.write_array.includes(companyStore().id)).map((user) => {
+            usersToShow().filter((user) => user.read_array.includes(companyStore().id)).map((user) => {
               return (
                 <div onClick={() => {setSelectedUser(user); setShowModal(!showModal());}} class="flex pl-8 text-format cursor-pointer">
                   <p class="text-base w-1/12 pt-3 pb-3">{user.id}</p>

@@ -3,20 +3,21 @@ import { createSignal, createEffect, Show, For } from "solid-js";
 import createModal from "../../../Store/modal.jsx"
 import createUser from "../../../Store/user.jsx"
 import AddVulnerabilityModal from '../modalComponents/addVulnerabilityModal.jsx';
-import createInternalNetwork from "../../../Store/internalNetworks.jsx"
 import VoxService from "../../../Services/apiHandler.jsx";
+import history from '../../../history.jsx'
 
 function SourceCode() {
   const { showModal, setShowModal, setShowModalStr, showModalStr } = createModal;
   const { user } = createUser;
-  const [repositories, setRepositories] = createSignal([])
+  const [vulnerabilities, setVulnerabilities] = createSignal([])
 
   createEffect(() => {
-    VoxService.getRepositoryResources(user().read_array[0])
+    VoxService.getVulnerabilityResources(user().read_array[0])
       .then((res) => {
-        //setRepositories(res.data);
+        setVulnerabilities(res.data);
       });
   }, []);
+
 
   return (
     <>
@@ -51,16 +52,35 @@ function SourceCode() {
         </div>
       </div>
       <div class="w-full internal-tables internal-tables-scroll">
-        <For each={repositories()}>
+        <For each={vulnerabilities()}>
           {
-            (repository) =>
+            (vulnerability) =>
             <>
-              <div class="flex p-3 pl-8 internal-tables-active text-format">
-                <p class="text-base w-1/12">{repository.id}</p>
-                <p class="text-base w-3/12">{repository.repository_name}</p>
-                <p class="text-base w-5/12">{repository.repository_url}</p>
-                <p class="text-base w-1/12">{repository.visibility}</p>
-                <p class="text-base w-2/12">{repository.resource_language}</p>
+              <div class="flex p-3 pl-8 internal-tables-active text-format cursor-pointer" onClick={() => {history.push('/issues/' + vulnerability.id)}}>
+                <p class="text-base w-2/12">{new Date(vulnerability.created).toISOString().split('T')[0]}</p>
+                <p class="text-base w-2/12">{vulnerability.researcher.name}</p>
+                <p class="text-base w-2/12">{vulnerability.issue_class}</p>
+                <div class="flex no-border-bottom text-base w-2/12">
+                  {vulnerability.risk_score}
+                  <div class="mr-1"></div>
+                  <For each={new Array(vulnerability.risk_score)}>
+                    {
+                      () =>
+                      <>
+                        <div class="w-2 h-2 ml-0.5 mt-2 red-border rounded-full codefend-bg-red"></div>
+                      </>
+                    }
+                  </For>
+                  <For each={new Array(5 - vulnerability.risk_score)}>
+                    {
+                      () =>
+                      <>
+                        <div class="w-2 h-2 ml-0.5 mt-2 codefend-border-red rounded-full"></div>
+                      </>
+                    }
+                  </For>
+                </div>
+                <p class="text-base w-5/12">{vulnerability.issue_name}</p>
               </div>
             </>
           }

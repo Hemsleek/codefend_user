@@ -14,6 +14,7 @@ import LoginView from "./views/LoginView";
 import RegisterView from "./views/RegisterView";
 import AdminPanelView from "./views/AdminPanelView";
 import AdminCompanyView from "./views/AdminCompanyView";
+import IssueDetailView from "./views/IssueDetailView";
 import createUser from "./Store/user.jsx"
 
 const { user } = createUser;
@@ -59,6 +60,7 @@ function renderApp() {
           <Route path="/socialengineering" component={SocialView}/>
           <Route path="/issues" component={IssuesView}/>
           <Route path="/internalnetwork" component={InternalNetworkView}/>
+          <Route path="/issues/:id" component={IssueDetailView}/>
         </Routes>
       </Router>
     ),

@@ -194,6 +194,14 @@ main {
     color: var(--bg-codefend) !important;
 }
 
+.codefend-bg-red {
+    background-color: var(--bg-codefend) !important;
+}
+
+.codefend-border-red {
+    border: 1px solid var(--bg-codefend) !important; 
+}
+
 .text-white {
     color: var(--main-black) !important;
 }
@@ -204,4 +212,63 @@ main {
 
 .checkbox-color {
     accent-color: var(--bg-codefend)
+}
+
+.editor > * + * {
+    margin-top: 0.75em;
+}
+
+.editor ul,
+ol {
+    padding: 0 1rem;
+}
+
+.editor h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.1;
+}
+
+.editor code {
+    background-color: rgba(#616161, 0.1);
+    color: #616161;
+}
+
+.editor pre {
+    background: #0D0D0D;
+    color: #FFF;
+    font-family: 'JetBrainsMono', monospace;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+
+   
+}
+
+.editor pre code {
+    color: inherit;
+    padding: 0;
+    background: none;
+    font-size: 0.8rem;
+}
+.editor img {
+    max-width: 100%;
+    height: auto;
+}
+
+.editor blockquote {
+    padding-left: 1rem;
+    border-left: 2px solid rgba(#0D0D0D, 0.1);
+}
+
+.editor hr {
+    border: none;
+    border-top: 2px solid rgba(#0D0D0D, 0.1);
+    margin: 2rem 0;
+}
+
+.editor button {
+    background-color: #616161;
 }

@@ -392,7 +392,82 @@ class VoxServices {
         return false;
       });
   }
+    
+  ///////////////////////////////////////////////////////////////////////
+  //            Vulnerability  resources Handler                       //
+  ///////////////////////////////////////////////////////////////////////
 
+  
+  addVulnerabilityResources(data) {
+    return axios({
+      method: "post",
+      url: host + "/v1/issues/add",
+      data: data,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization' : `Bearer ${window.localStorage.getItem('token')}`
+      }
+    })
+      .then(() => {
+        return true;
+      })
+      .catch(() => {
+        return false;
+      });
+  }
+
+  getVulnerabilityResources(company_id) {
+    return axios({
+      method: "get",
+      url: host + "/v1/issues/" + company_id,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization' : `Bearer ${window.localStorage.getItem('token')}`
+      }
+    })
+      .then((resources) => {
+        return resources;
+      })
+      .catch(() => {
+        return false;
+      });
+  }
+  
+  getVulnerabilityById(id) {
+    return axios({
+      method: "get",
+      url: host + "/v1/issue/" + id,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization' : `Bearer ${window.localStorage.getItem('token')}`
+      }
+    })
+      .then((resource) => {
+        return resource;
+      })
+      .catch(() => {
+        return false;
+      });
+  }
+
+  updateVulnerabilityResources(data) {
+    return axios({
+      method: "post",
+      url: host + "/v1/issue/update",
+      data: data,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization' : `Bearer ${window.localStorage.getItem('token')}`
+      }
+    })
+      .then(() => {
+        return true;
+      })
+      .catch(() => {
+        return false;
+      });
+  }
+  
 }
 
 const service = new VoxServices();
