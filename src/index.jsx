@@ -2,7 +2,7 @@ import { lazy } from "solid-js";
 import { Route, Router, Routes } from "@solidjs/router";
 import { render } from "solid-js/web";
 import history from './history';
-import './index.css'
+import './index.scss'
 import InternalNetworkView from "./views/InternalNetworkView";
 import WebApplicationView from "./views/WebApplicationView";
 import MobileApplicationView from "./views/MobileApplicationView";

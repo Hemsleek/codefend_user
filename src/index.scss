@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Color Scheme Light */
 :root {
-    --bg-black: #fdfdfd;
+    --bg-light: #f1f1f1;
+    --bg-main: #f1f1f1;
+    --color-main: #222222;
+    --bg-black: #1f1f1f;
     --color-black: #fdfdfd;
     --sidebar-black: #fafafa;
     --bg-codefend: #f43434;
@@ -17,7 +21,31 @@
     --sidebar-width: 64px;
     --navbar-height: 52px;
     --main-black: #f7f7f7;
+    --input-background: #ffffff;
+    --input-font-color: #222222;
+    --text-color-main: #222222;
+    --text-color-alt: #929292;
+
+    --toolbar-text-color: #ffffff;
+    --toolbar-bg-color: #232323;
+
+    color-scheme: light;
 }
+
+/* If user prefers a dark appearance */
+@media (prefers-color-scheme: dark) {
+
+    // #brand img {
+    //     content: url("/src/assets/logo-light.svg");
+    // }
+    // .bg-color {
+    //     background-color: red !important;
+    // }
+    // body {
+    //     background-color: var(--bg-black);
+    // } 
+}
+
 
 @font-face {
     font-family: Roboto;
@@ -33,8 +61,34 @@
     src: local('Questrial-Regular'), url('./assets/Questrial-Regular.ttf') format('truetype');
 }
 
+body {
+    overflow-y: hidden;
+    background-color: var(--bg-main);
+    font-family: Questrial;
+    color: var(--color-main);
+}
+
 ::-webkit-scrollbar {
     width: 6px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Questrial;
+}
+
+h2 {
+    color: #585858;
+}
+h3 {
+    color: var(--text-color-alt);
+}
+
+input {
+    font-size: 14px;
+}
+
+button {
+    font-weight: bold;
 }
 
 ::-webkit-scrollbar-track {
@@ -47,6 +101,25 @@
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--focus-icon);
+}
+
+.top-toolbar {
+    background: linear-gradient(90deg, rgba(221,52,52,1) 73%, rgba(233,86,86,1) 100%);
+    background-color: var(--toolbar-bg-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+    color: var(--toolbar-text-color);
+    .brand {
+        display: flex;
+        justify-content: flex-start;
+        padding: 6px;
+        img {
+            height: 23px;
+        }
+    }
 }
 
 .bg-codefend {
@@ -93,9 +166,7 @@ nav {
     color: var(--color-black) !important;
 }
 
-body {
-    overflow-y: hidden;
-}
+
 
 main {
     margin-top: var(--navbar-height);
@@ -180,13 +251,13 @@ main {
 
 
 .log-component {
-    background-color: var(--bg-black);
-    color: var(--color-codefend);
+    // background-color: var(--bg-light);
+    // color: var(--color-codefend);
 }
 
 .log-inputs {
-    background-color: var(--bg-black);
-    color: var(--font-color) !important;
+    background-color: var(--input-background);
+    color: var(--input-font-color) !important;
     border: 1px solid var(--color-border);
 }
 
