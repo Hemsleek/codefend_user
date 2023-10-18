@@ -3,3 +3,4 @@ dist
 .env.online
 .env.dev
 package-lock.json
+.env
