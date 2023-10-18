@@ -52,5 +52,10 @@
   },
   "main": "vite.config.js",
   "keywords": [],
-  "author": "Codefend"
+  "author": "Codefend",
+  "resolutions": {
+    "@tiptap/core": "2.0.3",
+    "@tiptap/pm": "2.0.3",
+    "@tiptap/starter-kit": "2.0.3"
+  }
 }
