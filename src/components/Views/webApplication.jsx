@@ -2,10 +2,10 @@
 import { createSignal, createEffect, Show, For } from "solid-js";
 
 //Components
-import WebApplication from './viewComponents/webApplication.jsx';
-import WebApplicationLocation from './viewComponents/webApplicationLocation.jsx';
-import WebApplicationStatics from './viewComponents/webApplicationStatics.jsx';
-import WebApplicationCredentials from './viewComponents/WebApplicationCredentials.jsx';
+import WebApplication from "./viewComponents/webApplication.jsx";
+import WebApplicationLocation from "./viewComponents/webApplicationLocation.jsx";
+import WebApplicationStatics from "./viewComponents/webApplicationStatics.jsx";
+import WebApplicationCredentials from "./viewComponents/webApplicationCredentials.jsx";
 
 function MainView() {
   return (
@@ -15,16 +15,14 @@ function MainView() {
           <div class="pb-9 title title-format h-16">
             Web applications & network
           </div>
-          <WebApplication/>
+          <WebApplication />
         </section>
-        <section  class="w-4/12 pl-2">
-          <div class="pb-9 title title-format h-16">
-          </div>
+        <section class="w-4/12 pl-2">
+          <div class="pb-9 title title-format h-16"></div>
 
-          <WebApplicationLocation/>
-          <WebApplicationStatics/>
-          <WebApplicationCredentials/>
-
+          <WebApplicationLocation />
+          <WebApplicationStatics />
+          <WebApplicationCredentials />
         </section>
       </main>
     </>

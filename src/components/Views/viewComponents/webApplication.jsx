@@ -8,7 +8,7 @@ import createModal from "../../../Store/modal.jsx";
 import createUser from "../../../Store/user.jsx";
 import createResource from "../../../Store/resources";
 
-function InternalNetworks() {
+function WebApplication() {
   const { resourcesStore, setResourcesStore } = createResource;
 
   const { showModal, setShowModal, setShowModalStr, showModalStr } =
@@ -176,4 +176,4 @@ function InternalNetworks() {
   );
 }
 
-export default InternalNetworks;
+export default WebApplication;
