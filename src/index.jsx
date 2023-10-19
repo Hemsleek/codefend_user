@@ -15,7 +15,7 @@ import RegisterView from "./views/RegisterView";
 import AdminPanelView from "./views/AdminPanelView";
 import AdminCompanyView from "./views/AdminCompanyView";
 import IssueDetailView from "./views/IssueDetailView";
-import Loader from "./Views/Loader";
+import Loader from "./views/Loader";
 import createUser from "./Store/user.jsx";
 import { Toaster } from "solid-toast";
 import { AiFillCheckCircle } from "solid-icons/ai";
