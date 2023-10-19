@@ -8,7 +8,7 @@ import history from "../../history.jsx";
 import WebApplication from "./viewComponents/webApplication.jsx";
 import WebApplicationLocation from "./viewComponents/webApplicationLocation.jsx";
 import WebApplicationStatics from "./viewComponents/webApplicationStatics.jsx";
-import WebApplicationCredentials from "./viewComponents/WebApplicationCredentials.jsx";
+import WebApplicationCredentials from "./viewComponents/webApplicationCredentials.jsx";
 import toast from "solid-toast";
 
 function MainView() {
